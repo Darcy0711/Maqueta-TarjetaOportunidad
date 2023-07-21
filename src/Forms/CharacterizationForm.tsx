@@ -59,12 +59,12 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                 </label>
                 <input
                   type="text"
-                  {...register('Address')}
                   id="inputCargo"
                   className="border border-gray-300 text-gray-900 rounded w-full p-1"
+                  {...register('Address')}
                 />
                 {errors['Address'] &&
-                <p className="text-slate-400 inline-flex">{errors['Address'].message as string}</p>
+                <p className="text-red-500 inline-flex">{errors['Address'].message as string}</p>
                 }
               </div>
               <div className="w-full">
@@ -78,7 +78,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                   {...register('AffectedProcess')}
                 />
                  {errors['AffectedProcess'] &&
-                <p className="text-slate-400 inline-flex">{errors['AffectedProcess'].message as string}</p>
+                <p className="text-red-500 inline-flex">{errors['AffectedProcess'].message as string}</p>
                 }
               </div>
             </div>
@@ -106,7 +106,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('OfficialName')}
                           />
                           {errors['OfficialName'] &&
-                            <p className="text-slate-400 inline-flex">{errors['OfficialName'].message as string}</p>
+                            <p className="text-red-500 inline-flex">{errors['OfficialName'].message as string}</p>
                           }
                         </td>
                         <td>
@@ -117,7 +117,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('Post')}
                           />
                           {errors['Post'] &&
-                            <p className="text-slate-400 inline-flex">{errors['Post'].message as string}</p>
+                            <p className="text-red-500 inline-flex">{errors['Post'].message as string}</p>
                           }
                         </td>
                         <td>
@@ -128,7 +128,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('Email')}
                           />
                           {errors['Email'] &&
-                            <p className="text-slate-400 inline-flex">{errors['Email'].message as string}</p>
+                            <p className="text-red-500 inline-flex">{errors['Email'].message as string}</p>
                           }
                         </td>
                       </tr>
@@ -170,7 +170,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('DescriptionProblem')}
                   >
                    {errors['DescriptionProblem'] && 
-                    <p className="text-slate-400 inline-flex">{errors['DescriptionProblem'].message as string}</p>
+                    <p className="text-red-500 inline-flex">{errors['DescriptionProblem'].message as string}</p>
                    } 
                   </textarea>
                 </div>
@@ -186,7 +186,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('ProcessProblem')}
                   >
                     {errors['ProcessProblem'] && 
-                      <p className="text-slate-400 inline-flex">{errors['ProcessProblem'].message as string}</p>
+                      <p className="text-red-500 inline-flex">{errors['ProcessProblem'].message as string}</p>
                     }
                   </textarea>
                 </div>
@@ -218,7 +218,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                       {...register('WhatProblem')}
                     >
                       {errors['WhatProblem'] && 
-                        <p className="text-slate-400 inline-flex">{errors['WhatProblem'].message as string}</p>
+                        <p className="text-red-500 inline-flex">{errors['WhatProblem'].message as string}</p>
                       }
                     </textarea>
                   </div>
@@ -248,7 +248,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('WhatImpact')}
                   >
                     {errors['WhatImpact'] && 
-                      <p className="text-slate-400 inline.flex">{errors['WhatImpact'].message as string}</p>
+                      <p className="text-red-500 inline.flex">{errors['WhatImpact'].message as string}</p>
                     }
                   </textarea>
                 </div>
@@ -262,7 +262,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('OperationProcess')}
                   >
                     {errors['OperationProcess'] &&
-                      <p className="text-slate-400 inline-flex">{errors['OperationProcess'].message as string}</p>
+                      <p className="text-red-500 inline-flex">{errors['OperationProcess'].message as string}</p>
                     }
                   </textarea>
                 </div>
@@ -273,7 +273,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                 Limpiar
               </button>
               <button
-              onClick={nextStep}
+              // onClick={nextStep}
                 type="submit"
                 className="border border-blue-800 text-white rounded bg-blue-900 w-32 h-10 mr-5"
               >
