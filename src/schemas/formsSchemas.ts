@@ -56,7 +56,9 @@ export const CharacterizationFormSchema = z.object({
     .min(2, 'Campo obligatorio')
     .max(10, 'Solo puede escribir un limite de 10 caracteres'),
 
-    //Impact Type
+    ImpactType: z
+    .string()
+    .min(1, 'El campo es obligatorio'),
 
     WhatImpact: z
     .string()

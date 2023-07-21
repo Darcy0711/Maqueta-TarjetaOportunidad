@@ -198,13 +198,16 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     <label className="block mt-2 font-serif text-start text-gray-500">
                       ¿Por qué motivo se presenta el problema?
                     </label>
-                    <select className="border py-2 w-full mt-3 rounded-lg">
+                    <select 
+                      className="border py-2 w-full mt-3 rounded-lg">
+                     
                       <option></option>
                       <option>Ausencia de herramientas tecnológicas</option>
                       <option>Infraestructura tecnológica deficiente</option>
                       <option>Falta de capacidad operativa</option>
                       <option>Otros</option>
                     </select>
+
                   </div>
                 </div>
                 <div>
