@@ -18,10 +18,10 @@ export const FormGroup = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640); // Adjust the breakpoint as needed
+      setIsSmallScreen(window.innerWidth < 640); 
     };
 
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -133,6 +133,7 @@ export const FormGroup = () => {
           {currentStep === 1 && <CharacterizationForm nextStep={handleNextStep}/>}
           {currentStep === 2 && <AnalysisForm  nextStep={handleNextStep}/>}
           {currentStep === 3 && <ProcessForm  />}
+          
         </div>
       </div>
     </>

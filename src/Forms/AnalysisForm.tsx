@@ -4,7 +4,7 @@ import { AnalysisForm as analysisFormZod , AnalysisFormSchema } from '../schemas
 import { zodResolver } from '@hookform/resolvers/zod';
 
 interface AnalysisProps {
-  nextStep?: () => void;
+  nextStep: () => void;
   
 }
 
@@ -16,6 +16,7 @@ export const AnalysisForm = ({nextStep}: AnalysisProps) => {
 
   const onSubmit = (data:analysisFormZod) => {
     console.log(data);
+    nextStep();
   }
 
   return (
@@ -144,7 +145,6 @@ export const AnalysisForm = ({nextStep}: AnalysisProps) => {
             Limpiar
           </button>
           <button
-            // onClick={nextStep}
             className="border border-blue-800 text-white rounded bg-blue-900 w-32 h-10 mr-5"
           >
             Siguiente

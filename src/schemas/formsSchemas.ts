@@ -41,7 +41,7 @@ export const CharacterizationFormSchema = z.object({
 
     DescriptionProblem: z
     .string()
-    .min(1, 'Campo obligatorio')
+    .min(2, 'Campo obligatorio')
     .max(20, 'Solo puede escribir un limite de 20 caracteres'),
 
     ProcessProblem: z
@@ -49,7 +49,9 @@ export const CharacterizationFormSchema = z.object({
     .min(2, 'Campo obligatorio')
     .max(20, 'Solo puede escribir un limite de 20 caracteres'),
 
-    ReasonProblem: z.string().min(2, 'Campo obligatorio'),
+    ReasonProblem: z
+    .string()
+    .min(2, 'Este campo es obligatorio'),
 
     WhatProblem: z
     .string()
@@ -81,19 +83,19 @@ export const AnalysisFormSchema = z.object({
     .string()
     .min(2, 'Campo obligatorio')
     .max(10, 'Solo puede escribir un limite de 10 caracteres')
-    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/, 'Debe ingresar un número valido'),
+    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/),
 
     IndicatorReal: z
     .string()
     .min(2, 'Campo obligatorio')
     .max(20, 'Solo puede escribir un limite de 20 caracteres')
-    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/, 'Debe ingresar un número valido'),
+    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/),
 
     Gap: z
     .string()
     .min(2, 'Campo obligatorio')
     .max(10, 'Solo puede escribir un limite de 10 caracteres')
-    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/, 'Debe ingresar un número valido'),
+    .regex(/^(\d+(\.\d{1,2})?|\d+(\.\d{1,2})?%)$/),
 
     PunctualProblem: z
     .string()

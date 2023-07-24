@@ -5,8 +5,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 
 interface CharacterizationProps {
-  nextStep?: () => void;
+  nextStep: () => void;
 }
+
 
 export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
   const [inputs, setInputs] = useState([{ id: 1 }]);
@@ -29,8 +30,10 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
 
   const onSubmit = (data:characterizationFormZod) => {
     console.log(data);
+    nextStep();
   }
 
+  
   return (
     <>
       <div>
@@ -64,7 +67,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                   {...register('Address')}
                 />
                 {errors['Address'] &&
-                <p className="text-red-500 inline-flex">{errors['Address'].message as string}</p>
+                <span className="text-red-500 inline-flex">{errors['Address'].message as string}</span>
                 }
               </div>
               <div className="w-full">
@@ -78,7 +81,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                   {...register('AffectedProcess')}
                 />
                  {errors['AffectedProcess'] &&
-                <p className="text-red-500 inline-flex">{errors['AffectedProcess'].message as string}</p>
+                <span className="text-red-500 inline-flex">{errors['AffectedProcess'].message as string}</span>
                 }
               </div>
             </div>
@@ -106,7 +109,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('OfficialName')}
                           />
                           {errors['OfficialName'] &&
-                            <p className="text-red-500 inline-flex">{errors['OfficialName'].message as string}</p>
+                            <span className="text-red-500 inline-flex">{errors['OfficialName'].message as string}</span>
                           }
                         </td>
                         <td>
@@ -117,7 +120,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('Post')}
                           />
                           {errors['Post'] &&
-                            <p className="text-red-500 inline-flex">{errors['Post'].message as string}</p>
+                            <span className="text-red-500 inline-flex">{errors['Post'].message as string}</span>
                           }
                         </td>
                         <td>
@@ -128,7 +131,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                             {...register('Email')}
                           />
                           {errors['Email'] &&
-                            <p className="text-red-500 inline-flex">{errors['Email'].message as string}</p>
+                            <span className="text-red-500 inline-flex">{errors['Email'].message as string}</span>
                           }
                         </td>
                       </tr>
@@ -170,7 +173,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('DescriptionProblem')}
                   >
                    {errors['DescriptionProblem'] && 
-                    <p className="text-red-500 inline-flex">{errors['DescriptionProblem'].message as string}</p>
+                    <span className="text-red-500 inline-flex">{errors['DescriptionProblem'].message as string}</span>
                    } 
                   </textarea>
                 </div>
@@ -186,7 +189,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('ProcessProblem')}
                   >
                     {errors['ProcessProblem'] && 
-                      <p className="text-red-500 inline-flex">{errors['ProcessProblem'].message as string}</p>
+                      <span className="text-red-500 inline-flex">{errors['ProcessProblem'].message as string}</span>
                     }
                   </textarea>
                 </div>
@@ -199,15 +202,18 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                       ¿Por qué motivo se presenta el problema?
                     </label>
                     <select 
-                      className="border py-2 w-full mt-3 rounded-lg">
-                     
+                      className="border py-2 w-full mt-3 rounded-lg"
+                      {...register('ReasonProblem')}
+                    >
                       <option></option>
                       <option>Ausencia de herramientas tecnológicas</option>
                       <option>Infraestructura tecnológica deficiente</option>
                       <option>Falta de capacidad operativa</option>
                       <option>Otros</option>
                     </select>
-
+                    {errors['ReasonProblem'] &&
+                    <span className="text-red-500 inline-flex">{errors['ReasonProblem'].message as string}</span>
+                    }
                   </div>
                 </div>
                 <div>
@@ -221,7 +227,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                       {...register('WhatProblem')}
                     >
                       {errors['WhatProblem'] && 
-                        <p className="text-red-500 inline-flex">{errors['WhatProblem'].message as string}</p>
+                        <span className="text-red-500 inline-flex">{errors['WhatProblem'].message as string}</span>
                       }
                     </textarea>
                   </div>
@@ -230,13 +236,18 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                   <label className="block mt-2 font-serif text-start text-gray-500 sm:ml-32">
                     ¿Qué tipo de impacto genera el problema?
                   </label>
-                  <select className="border py-2 w-full mt-3 rounded-lg sm:ml-32">
+                  <select className="border py-2 w-full mt-3 rounded-lg sm:ml-32"
+                  {...register('ImpactType')}
+                  >
                     <option></option>
                     <option>Incumplimiento de los tiempos establecidos</option>
                     <option>Vulneración de la seguridad</option>
                     <option>Aumento de costos</option>
                     <option>Deterioro de la calidad</option>
                   </select>
+                  {errors['ImpactType'] &&
+                    <span className="text-red-500 inline-flex">{errors['ImpactType'].message as string}</span>
+                  }
                 </div>
               </div>
 
@@ -251,7 +262,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('WhatImpact')}
                   >
                     {errors['WhatImpact'] && 
-                      <p className="text-red-500 inline.flex">{errors['WhatImpact'].message as string}</p>
+                      <span className="text-red-500 inline.flex">{errors['WhatImpact'].message as string}</span>
                     }
                   </textarea>
                 </div>
@@ -265,7 +276,7 @@ export const CharacterizationForm = ({ nextStep }: CharacterizationProps) => {
                     {...register('OperationProcess')}
                   >
                     {errors['OperationProcess'] &&
-                      <p className="text-red-500 inline-flex">{errors['OperationProcess'].message as string}</p>
+                      <span className="text-red-500 inline-flex">{errors['OperationProcess'].message as string}</span>
                     }
                   </textarea>
                 </div>
